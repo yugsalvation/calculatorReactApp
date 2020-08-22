@@ -1,0 +1,16 @@
+.verticalcenter {
+  min-height: 25vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.textalign {
+  align: center;
+}
+.tdalign {
+  height: 150px;
+}
+.tablealign {
+  text-align: center;
+}
