@@ -40,23 +40,7 @@ class Calculator extends Component {
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td colspan="1">
-                    <div className="form-group">
-                      <label for="oldvalue">Old value</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="oldvalue"
-                        placeholder="older value"
-                        ref={this.inputRef2}
-                        readonly="readonly"
-                      />
-                    </div>
-                  </td>
-                  <td></td>
-                </tr>
+
                 <tr>
                   <td>
                     <button
@@ -118,14 +102,14 @@ class Calculator extends Component {
 
   additions = () => {
     this.val1 = Number(this.inputRef.current.value);
-    this.inputRef.current.value = "";
-    this.inputRef2.current.value = this.val1;
+    //this.inputRef.current.value = "";
+    //this.inputRef2.current.value = this.val1;
     this.operation = "+";
   };
   subtractions = () => {
     this.val1 = Number(this.inputRef.current.value);
-    this.inputRef.current.value = "";
-    this.inputRef2.current.value = this.val1;
+    // this.inputRef.current.value = "";
+    //this.inputRef2.current.value = this.val1;
     this.operation = "-";
   };
   deletions = () => {
@@ -136,8 +120,8 @@ class Calculator extends Component {
   };
   multiplications = () => {
     this.val1 = Number(this.inputRef.current.value);
-    this.inputRef.current.value = "";
-    this.inputRef2.current.value = this.val1;
+    // this.inputRef.current.value = "";
+    //this.inputRef2.current.value = this.val1;
     this.operation = "*";
   };
   equals = () => {
@@ -145,20 +129,40 @@ class Calculator extends Component {
     let op = this.operation;
     if (op === "+") {
       this.inputRef.current.value = this.val1 + this.val2;
-      this.inputRef2.current.value = this.inputRef.current.value;
+      // this.inputRef2.current.value = this.inputRef.current.value;
     } else if (op === "-") {
       this.inputRef.current.value = this.val1 - this.val2;
-      this.inputRef2.current.value = this.inputRef.current.value;
+      //this.inputRef2.current.value = this.inputRef.current.value;
     } else if (op === "/") {
       this.inputRef.current.value = this.val1 / this.val2;
-      this.inputRef2.current.value = this.inputRef.current.value;
+      // this.inputRef2.current.value = this.inputRef.current.value;
     } else if (op === "*") {
       this.inputRef.current.value = this.val1 * this.val2;
-      this.inputRef2.current.value = this.inputRef.current.value;
+      // this.inputRef2.current.value = this.inputRef.current.value;
     } else {
       this.inputRef.current.value = this.val1;
-      this.inputRef2.current.value = this.inputRef.current.value;
+      //this.inputRef2.current.value = this.inputRef.current.value;
     }
   };
+}
+
+{
+  /* <tr>
+                  <td></td>
+                  <td colspan="1">
+                    <div className="form-group">
+                      <label for="oldvalue">Old value</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="oldvalue"
+                        placeholder="older value"
+                        ref={this.inputRef2}
+                        readonly="readonly"
+                      />
+                    </div>
+                  </td>
+                  <td></td>
+                </tr> */
 }
 export default Calculator;
