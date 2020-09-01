@@ -5,6 +5,7 @@ class Calculator extends Component {
   state = {};
   styles = {};
   inputRef = React.createRef();
+  inputRef2 = React.createRef();
   operation = "";
   val1 = 0;
   val2 = 0;
@@ -88,6 +89,22 @@ class Calculator extends Component {
                     </button>
                   </td>
                 </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <div className="form-group">
+                      <label for="oldvalue">Old value</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="oldvalue"
+                        placeholder="older value"
+                        ref={this.inputRef2}
+                        readonly="readonly"
+                      />
+                    </div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -97,24 +114,29 @@ class Calculator extends Component {
       </div>
     );
   }
+
   additions = () => {
     this.val1 = Number(this.inputRef.current.value);
     this.inputRef.current.value = "";
+    this.inputRef2.current.value = this.val1;
     this.operation = "+";
   };
   subtractions = () => {
     this.val1 = Number(this.inputRef.current.value);
     this.inputRef.current.value = "";
+    this.inputRef2.current.value = this.val1;
     this.operation = "-";
   };
   deletions = () => {
     this.val1 = Number(this.inputRef.current.value);
+    this.inputRef2.current.value = this.val1;
     this.inputRef.current.value = "";
     this.operation = "/";
   };
   multiplications = () => {
     this.val1 = Number(this.inputRef.current.value);
     this.inputRef.current.value = "";
+    this.inputRef2.current.value = this.val1;
     this.operation = "*";
   };
   equals = () => {
@@ -122,14 +144,19 @@ class Calculator extends Component {
     let op = this.operation;
     if (op === "+") {
       this.inputRef.current.value = this.val1 + this.val2;
+      this.inputRef2.current.value = this.inputRef.current.value;
     } else if (op === "-") {
       this.inputRef.current.value = this.val1 - this.val2;
+      this.inputRef2.current.value = this.inputRef.current.value;
     } else if (op === "/") {
       this.inputRef.current.value = this.val1 / this.val2;
+      this.inputRef2.current.value = this.inputRef.current.value;
     } else if (op === "*") {
       this.inputRef.current.value = this.val1 * this.val2;
+      this.inputRef2.current.value = this.inputRef.current.value;
     } else {
       this.inputRef.current.value = this.val1;
+      this.inputRef2.current.value = this.inputRef.current.value;
     }
   };
 }
