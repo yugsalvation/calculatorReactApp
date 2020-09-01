@@ -41,6 +41,23 @@ class Calculator extends Component {
                   </td>
                 </tr>
                 <tr>
+                  <td></td>
+                  <td colspan="1">
+                    <div className="form-group">
+                      <label for="oldvalue">Old value</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="oldvalue"
+                        placeholder="older value"
+                        ref={this.inputRef2}
+                        readonly="readonly"
+                      />
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
                   <td>
                     <button
                       type="button"
@@ -87,22 +104,6 @@ class Calculator extends Component {
                     >
                       /
                     </button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td colspan="3">
-                    <div className="form-group">
-                      <label for="oldvalue">Old value</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="oldvalue"
-                        placeholder="older value"
-                        ref={this.inputRef2}
-                        readonly="readonly"
-                      />
-                    </div>
                   </td>
                 </tr>
               </tbody>
